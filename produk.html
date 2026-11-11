@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Katalog sepatu futsal dan sepak bola North Step.">
+    <title>Katalog Produk - North Step</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            background: #062315;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        header {
+            background: #0a3822;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,.4);
+            border-bottom: 1px solid rgba(212,175,55,.3);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            width: 42px;
+            height: 42px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: #d4af37;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #d4af37;
+        }
+
+        /* HEADER */
+        .page-header {
+            text-align: center;
+            padding: 65px 20px;
+            background: linear-gradient(180deg,#0a3822,#062315);
+            border-bottom: 1px solid rgba(212,175,55,.2);
+        }
+
+        .page-header h1 {
+            font-size: clamp(1.8rem,4vw,2.7rem);
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: #d4af37;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 45px auto;
+            padding: 0 24px;
+        }
+
+        /* FILTER */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .btn-filter {
+            background: #0a3822;
+            color: #cbd5e1;
+            border: 1px solid rgba(212,175,55,.4);
+            padding: 11px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .btn-filter:hover,
+        .btn-filter.active {
+            background: #d4af37;
+            color: #062315;
+            border-color: #d4af37;
+            box-shadow: 0 0 12px rgba(212,175,55,.3);
+        }
+
+        /* PRODUCT GRID */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fill,
+                minmax(min(100%,260px),1fr)
+            );
+            gap: 28px;
+        }
+
+        /* PRODUCT CARD */
+        .product-card {
+            background: #0a3822;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(212,175,55,.2);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: .3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 24px rgba(212,175,55,.2);
+            border-color: #d4af37;
+        }
+
+        .product-card.hide {
+            display: none;
+        }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #ef4444;
+            color: white;
+            font-size: .72rem;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 5px;
+            z-index: 2;
+        }
+
+        .badge.bestseller {
+            background: #d4af37;
+            color: #062315;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background: #04170e;
+            display: block;
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .product-category {
+            font-size: .75rem;
+            font-weight: 700;
+            color: #d4af37;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .product-rating {
+            color: #d4af37;
+            font-size: .85rem;
+            margin-bottom: 15px;
+        }
+
+        .product-rating span {
+            color: #94a3b8;
+            margin-left: 5px;
+        }
+
+        /* PRODUCT FOOTER */
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,.1);
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #d4af37;
+            white-space: nowrap;
+        }
+
+        .btn-buy {
+            background: #d4af37;
+            color: #062315;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: .85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .3s;
+            white-space: nowrap;
+        }
+
+        .btn-buy:hover {
+            background: #f3e5ab;
+            transform: scale(1.04);
+        }
+
+        .empty-message {
+            display: none;
+            text-align: center;
+            padding: 40px 10px;
+            color: #cbd5e1;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #04170e;
+            color: #d4af37;
+            margin-top: 70px;
+            border-top: 1px solid rgba(212,175,55,.2);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: .85rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(
+                    auto-fit,
+                    minmax(min(100%,230px),1fr)
+                );
+                gap: 18px;
+            }
+        }
+
+        @media(max-width:480px) {
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image {
+                height: 250px;
+            }
+
+            .btn-filter {
+                padding: 9px 16px;
+                font-size: .8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo-container">
+            <img src="aset/images/logo-north-step.jpg"
+                 alt="Logo North Step"
+                 class="logo-img">
+
+            <a href="index.html" class="logo">
+                NORTH<span>STEP</span>
+            </a>
+        </div>
+
+        <nav aria-label="Navigasi utama">
+            <a href="index.html">Beranda</a>
+            <a href="produk.html" class="active" aria-current="page">Semua Produk</a>
+            <a href="tentang.html">Tentang Kami</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <h1>Katalog Sepatu North Step</h1>
+        <p>Jelajahi koleksi sepatu Futsal dan Sepak Bola terbaik kami.</p>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- FILTER BUTTON -->
+        <div class="filter-container">
+            <button class="btn-filter active"
+                    data-category="all"
+                    aria-pressed="true">
+                Semua Produk
+            </button>
+
+            <button class="btn-filter"
+                    data-category="futsal"
+                    aria-pressed="false">
+                Futsal
+            </button>
+
+            <button class="btn-filter"
+                    data-category="bola"
+                    aria-pressed="false">
+                Sepak Bola
+            </button>
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <section class="product-grid" aria-label="Daftar produk">
+
+            <!-- PRODUCT 1 -->
+            <article class="product-card item-futsal">
+                <span class="badge bestseller">Terlaris</span>
+
+                <img src="aset/images/futsal-collection.jpg"
+                     alt="NS Voltasala Indoor"
+                     class="product-image"
+                     loading="lazy">
+
+                <div class="product-info">
+                    <span class="product-category">Futsal</span>
+
+                    <h2 class="product-title">
+                        NS Voltasala Indoor Series
+                    </h2>
+
+                    <div class="product-rating">
+                        ★ ★ ★ ★ ★ <span>(4.9)</span>
+                    </div>
+
+                    <div class="product-footer">
+                        <span class="product-price">Rp 459.000</span>
+
+                        <button class="btn-buy"
+                                data-product="NS Voltasala Indoor Series">
+                            Beli Sekarang
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT 2 -->
+            <article class="product-card item-bola">
+                <img src="aset/images/football-collection-1.jpg"
+                     alt="NS Field Cleats"
+                     class="product-image"
+                     loading="lazy">
+
+                <div class="product-info">
+                    <span class="product-category">Sepak Bola</span>
+
+                    <h2 class="product-title">
+                        NS Field Cleats Collection
+                    </h2>
+
+                    <div class="product-rating">
+                        ★ ★ ★ ★ ☆ <span>(4.7)</span>
+                    </div>
+
+                    <div class="product-footer">
+                        <span class="product-price">Rp 529.000</span>
+
+                        <button class="btn-buy"
+                                data-product="NS Field Cleats Collection">
+                            Beli Sekarang
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT 3 -->
+            <article class="product-card item-bola">
+                <span class="badge">Limited</span>
+
+                <img src="aset/images/cleats-studio-green.jpg"
+                     alt="NS Studio Heritage"
+                     class="product-image"
+                     loading="lazy">
+
+                <div class="product-info">
+                    <span class="product-category">Sepak Bola</span>
+
+                    <h2 class="product-title">
+                        NS Studio Heritage Green 1927
+                    </h2>
+
+                    <div class="product-rating">
+                        ★ ★ ★ ★ ★ <span>(5.0)</span>
+                    </div>
+
+                    <div class="product-footer">
+                        <span class="product-price">Rp 689.000</span>
+
+                        <button class="btn-buy"
+                                data-product="NS Studio Heritage Green 1927">
+                            Beli Sekarang
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT 4 -->
+            <article class="product-card item-bola">
+                <img src="aset/images/football-collection-2.jpg"
+                     alt="NS Pro Field"
+                     class="product-image"
+                     loading="lazy">
+
+                <div class="product-info">
+                    <span class="product-category">Sepak Bola</span>
+
+                    <h2 class="product-title">
+                        NS Pro Field Performance Cleats
+                    </h2>
+
+                    <div class="product-rating">
+                        ★ ★ ★ ★ ☆ <span>(4.8)</span>
+                    </div>
+
+                    <div class="product-footer">
+                        <span class="product-price">Rp 579.000</span>
+
+                        <button class="btn-buy"
+                                data-product="NS Pro Field Performance Cleats">
+                            Beli Sekarang
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <p class="empty-message" id="emptyMessage" role="status">
+            Produk tidak ditemukan.
+        </p>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 North Step. Seluruh Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // FILTER PRODUK
+            const filterButtons =
+                document.querySelectorAll(".btn-filter");
+
+            const productCards =
+                document.querySelectorAll(".product-card");
+
+            const emptyMessage =
+                document.getElementById("emptyMessage");
+
+            filterButtons.forEach(button => {
+
+                button.addEventListener("click", function () {
+
+                    const category = this.dataset.category;
+
+                    let visibleProducts = 0;
+
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove("active");
+                        btn.setAttribute("aria-pressed", "false");
+                    });
+
+                    this.classList.add("active");
+                    this.setAttribute("aria-pressed", "true");
+
+                    productCards.forEach(card => {
+
+                        const isMatch =
+                            category === "all" ||
+                            card.classList.contains("item-" + category);
+
+                        card.classList.toggle("hide", !isMatch);
+
+                        if (isMatch) {
+                            visibleProducts++;
+                        }
+                    });
+
+                    emptyMessage.style.display =
+                        visibleProducts === 0 ? "block" : "none";
+                });
+            });
+
+
+            // BELI PRODUK MELALUI WHATSAPP
+            const buyButtons =
+                document.querySelectorAll(".btn-buy");
+
+            buyButtons.forEach(button => {
+
+                button.addEventListener("click", function () {
+
+                    const productName = this.dataset.product;
+
+                    const message =
+                        "Halo North Step, saya ingin membeli " +
+                        productName +
+                        ". Apakah produknya masih tersedia?";
+
+                    // GANTI DENGAN NOMOR WHATSAPP TOKO
+                    const phoneNumber = "6281234567890";
+
+                    const whatsappURL =
+                        "https://wa.me/" +
+                        phoneNumber +
+                        "?text=" +
+                        encodeURIComponent(message);
+
+                    window.open(
+                        whatsappURL,
+                        "_blank",
+                        "noopener,noreferrer"
+                    );
+                });
+            });
+
+        });
+    </script>
+
+</body>
+</html>

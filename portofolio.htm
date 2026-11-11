@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Brand - North Step</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        header {
+            background-color: #1e293b;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #38bdf8;
+        }
+
+        /* Hero Banner */
+        .portfolio-hero {
+            text-align: center;
+            padding: 5rem 1.5rem;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            border-bottom: 1px solid #334155;
+        }
+
+        .portfolio-hero h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-hero p {
+            color: #94a3b8;
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #38bdf8;
+            padding-left: 1rem;
+            color: #ffffff;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background-color: #1e293b;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #334155;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #38bdf8;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* Showcase Grid */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .showcase-card {
+            background-color: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            transition: transform 0.3s;
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .showcase-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .showcase-content {
+            padding: 1.5rem;
+        }
+
+        .showcase-tag {
+            font-size: 0.8rem;
+            color: #38bdf8;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .showcase-title {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 0.6rem;
+        }
+
+        .showcase-desc {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Brand Values / Timeline */
+        .about-section {
+            background-color: #1e293b;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            margin-bottom: 4rem;
+        }
+
+        .about-section p {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #1e293b;
+            color: #64748b;
+            border-top: 1px solid #334155;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <a href="index.html" class="logo">NORTH<span>STEP</span></a>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="portofolio.htm" class="active">Portofolio</a>
+            <a href="#">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="portfolio-hero">
+        <h1>Portofolio & Inovasi Design</h1>
+        <p>Rekam jejak North Step dalam menghadirkan sepatu olahraga berkinerja tinggi, memadukan seni desain modern dan keunggulan fungsional sejak 1927.</p>
+    </section>
+
+    <div class="container">
+
+        <!-- Stat Counter -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1927</div>
+                <div class="stat-label">Tahun Berdiri (Heritage)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Lini Olahraga Utama</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Pengguna Aktif</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Kualitas Teruji</div>
+            </div>
+        </div>
+
+        <!-- Profil Brand -->
+        <div class="about-section">
+            <h2 class="section-title">Filosfi Desain North Step</h2>
+            <p>North Step didedikasikan untuk menciptakan sepatu yang menggabungkan estetika berani dengan durabilitas tinggi. Setiap seri sepatu kami dirancang khusus melalui proses riset teknis yang mendalam guna memenuhi kebutuhan atlet profesional maupun pecinta gaya hidup aktif.</p>
+            <p>Dari lapangan futsal indoor hingga trek lari perkotaan, produk kami dibangun dengan material terpilih, memberikan daya cengkeram optimal dan kenyamanan sepanjang hari.</p>
+        </div>
+
+        <!-- Project Showcase -->
+        <h2 class="section-title">Koleksi Masterpiece</h2>
+        <div class="showcase-grid">
+
+            <!-- Showcase 1 -->
+            <div class="showcase-card">
+                <img src="Gemini_Generated_Image_vjeim1vjeim1vjei.jpg" alt="NS Heritage 1927" class="showcase-image">
+                <div class="showcase-content">
+                    <div class="showcase-tag">Edisi Spesial / Heritage</div>
+                    <h3 class="showcase-title">NS Studio Heritage 1927</h3>
+                    <p class="showcase-desc">Desain edisi peringatan dengan tekstur naga khas dan aksen emas premium untuk performa sepak bola klasik.</p>
+                </div>
+            </div>
+
+            <!-- Showcase 2 -->
+            <div class="showcase-card">
+                <img src="Gemini_Generated_Image_vna5s8vna5s8vna5.jpg" alt="NS Voltasala Indoor" class="showcase-image">
+                <div class="showcase-content">
+                    <div class="showcase-tag">Koleksi Futsal</div>
+                    <h3 class="showcase-title">NS Voltasala Circuit Pattern</h3>
+                    <p class="showcase-desc">Inovasi sol karet non-marking berdaya cengkeram tinggi dengan motif sirkuit modern untuk kelincahan fungsional di lapangan indoor.</p>
+                </div>
+            </div>
+
+            <!-- Showcase 3 -->
+            <div class="showcase-card">
+                <img src="Gemini_Generated_Image_xfc9iaxfc9iaxfc9 (2).jpeg" alt="NS N5 Running" class="showcase-image">
+                <div class="showcase-content">
+                    <div class="showcase-tag">Teknologi Running / N5</div>
+                    <h3 class="showcase-title">NS N5 Knit Cushioning</h3>
+                    <p class="showcase-desc">Teknologi bantalan knit yang breathable dirancang untuk meredam benturan dan memaksimalkan pengembalian energi saat berlari.</p>
+                </div>
+            </div>
+
+            <!-- Showcase 4 -->
+            <div class="showcase-card">
+                <img src="Gemini_Generated_Image_rwd2eerwd2eerwd2.jpg" alt="NS Pro Cleats" class="showcase-image">
+                <div class="showcase-content">
+                    <div class="showcase-tag">Koleksi Sepak Bola</div>
+                    <h3 class="showcase-title">NS Pro Field Performance</h3>
+                    <p class="showcase-desc">Konstruksi aerodinamis yang memberikan akselerasi presisi dan kontrol bola stabil di berbagai kondisi lapangan.</p>
+                </div>
+            </div>
+
+            <!-- Showcase 5 -->
+            <div class="showcase-card">
+                <img src="Gemini_Generated_Image_xfc9iaxfc9iaxfc9.jpeg" alt="NS Cyber Series" class="showcase-image">
+                <div class="showcase-content">
+                    <div class="showcase-tag">Street Running</div>
+                    <h3 class="showcase-title">NS Cyber Neon Edition</h3>
+                    <p class="showcase-desc">Eksplorasi warna berani yang menggabungkan elemen gaya jalanan (streetwear) dengan performa lari responsif.</p>
+                </div>
+            </div>
+
+            <!-- Showcase 6 -->
+            <div class="showcase-card">
+                <img src="Gemini_Generated_Image_yjbluzyjbluzyjbl.jpg" alt="NS Galaxy Cleats" class="showcase-image">
+                <div class="showcase-content">
+                    <div class="showcase-tag">Eksperimental Design</div>
+                    <h3 class="showcase-title">NS Night Sky Galaxy Cleats</h3>
+                    <p class="showcase-desc">Motif rasi bintang pada bodi sepatu dengan stud transparan yang menghadirkan tampilan visual unik di lapangan.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 North Step. Seluruh Hak Cipta Dilindungi.</p>
+    </footer>
+
+</body>
+</html>

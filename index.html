@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North Step - Premium Footwear</title>
+    <link rel="stylesheet" href="aset/css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="aset/images/logo-north-step.jpg"
+             alt="Logo North Step" class="logo-img">
+        <a href="index.html" class="logo">
+            NORTH<span>STEP</span>
+        </a>
+    </div>
+
+    <nav>
+        <a href="index.html" class="active">Beranda</a>
+        <a href="#katalog">Katalog Produk</a>
+        <a href="tentang.html">Tentang Kami</a>
+    </nav>
+</header>
+
+<section class="page-header">
+    <h1>Katalog Sepatu North Step</h1>
+    <p>
+        Jelajahi koleksi sepatu Futsal, Sepak Bola,
+        Running, Gunung, dan Basket eksklusif kami.
+    </p>
+</section>
+
+<main class="container">
+    <section id="katalog">
+
+        <div class="filter-container">
+            <button class="btn-filter active"
+                onclick="filterProduct('all', this)">
+                Semua Produk
+            </button>
+
+            <button class="btn-filter"
+                onclick="filterProduct('futsal', this)">
+                Futsal (8)
+            </button>
+
+            <button class="btn-filter"
+                onclick="filterProduct('bola', this)">
+                Sepak Bola (8)
+            </button>
+
+            <button class="btn-filter"
+                onclick="filterProduct('running', this)">
+                Running (8)
+            </button>
+
+            <button class="btn-filter"
+                onclick="filterProduct('gunung', this)">
+                Sepatu Gunung (8)
+            </button>
+
+            <button class="btn-filter"
+                onclick="filterProduct('basket', this)">
+                Basket (8)
+            </button>
+        </div>
+
+        <div class="product-grid">
+
+            <!--
+            PINDAHKAN SEMUA 40 PRODUCT-CARD
+            DARI KODE HTML LAMA KE BAGIAN INI.
+
+            Jangan ikut memindahkan:
+            - Header
+            - Page header
+            - Tentang kami
+            - Kontak
+            - Footer
+            - Script filter
+
+            Contoh satu produk:
+            -->
+
+            <div class="product-card item-futsal">
+                <span class="badge bestseller">Terlaris</span>
+
+                <img src="https://cdn.store-assets.com/s/986841/i/87840041.jpeg?width=1024"
+                     alt="NS Voltasala Indoor"
+                     class="product-image">
+
+                <div class="product-info">
+                    <span class="product-category">Futsal</span>
+
+                    <h3 class="product-title">
+                        NS Voltasala Indoor Series
+                    </h3>
+
+                    <div class="product-rating">
+                        ★ ★ ★ ★ ★ <span>(4.9)</span>
+                    </div>
+
+                    <div class="product-footer">
+                        <span class="product-price">
+                            Rp 459.000
+                        </span>
+
+                        <a href="https://wa.me/6281234567890?text=Halo%20North%20Step,%20saya%20ingin%20membeli%20NS%20Voltasala%20Indoor%20Series"
+                           class="btn-buy"
+                           target="_blank">
+                            Beli Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lanjutkan 39 produk lainnya di sini -->
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 North Step. Seluruh Hak Cipta Dilindungi.</p>
+</footer>
+
+<script src="/aset/js/script.js"></script>
+</body>
+</html>
